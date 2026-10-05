@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi Maestra Miel 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#080713;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars,
+.stars2{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.stars{
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px);
+    background-size:75px 75px;
+    animation:moveStars 35s linear infinite;
+    opacity:.65;
+}
+
+.stars2{
+    background-image:
+        radial-gradient(circle, rgba(255,180,220,.9) 1px, transparent 1px);
+    background-size:130px 130px;
+    animation:moveStars 55s linear infinite reverse;
+    opacity:.35;
+}
+
+@keyframes moveStars{
+    from{transform:translateY(0);}
+    to{transform:translateY(130px);}
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,105,180,.15),
+        transparent 45%);
+}
+
+.hero-content{
+    animation:appear 2s ease;
+    max-width:700px;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.small-title{
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#ffb7d9;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(60px,15vw,120px);
+    color:#ffb3d5;
+    text-shadow:
+        0 0 10px rgba(255,100,180,.5),
+        0 0 35px rgba(255,70,160,.35);
+    line-height:1;
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:17px;
+    color:#f6dce8;
+    line-height:1.8;
+}
+
+.heart{
+    font-size:55px;
+    margin:25px 0;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    15%{transform:scale(1.15);}
+    30%{transform:scale(1);}
+    45%{transform:scale(1.12);}
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 28px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff72ad,#d84b8e);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 0 25px rgba(255,80,160,.35);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 40px rgba(255,80,160,.6);
+}
+
+/* =========================
+   FLORES DECORATIVAS
+========================= */
+
+.flower{
+    position:fixed;
+    font-size:35px;
+    opacity:.75;
+    pointer-events:none;
+    z-index:1;
+    animation:floatFlower 5s ease-in-out infinite;
+}
+
+.f1{left:10px;top:15%;}
+.f2{right:10px;top:28%;animation-delay:1s;}
+.f3{left:15px;bottom:18%;animation-delay:2s;}
+.f4{right:15px;bottom:10%;animation-delay:3s;}
+
+@keyframes floatFlower{
+    0%,100%{transform:translateY(0) rotate(-5deg);}
+    50%{transform:translateY(-15px) rotate(5deg);}
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    min-height:100vh;
+    padding:100px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    text-align:center;
+}
+
+.section-title{
+    font-family:'Great Vibes',cursive;
+    font-size:65px;
+    color:#ffb2d4;
+    margin-bottom:20px;
+}
+
+.section-text{
+    color:#eadce4;
+    line-height:1.9;
+    max-width:700px;
+    margin:auto;
+}
+
+/* =========================
+   ABEJITA
+========================= */
+
+.bee{
+    font-size:48px;
+    display:inline-block;
+    animation:beeFly 3s ease-in-out infinite;
+}
+
+@keyframes beeFly{
+    0%,100%{transform:translate(0,0) rotate(-5deg);}
+    50%{transform:translate(25px,-15px) rotate(5deg);}
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.photo{
+    aspect-ratio:1/1;
+    overflow:hidden;
+    border-radius:22px;
+    border:1px solid rgba(255,180,215,.35);
+    box-shadow:0 10px 35px rgba(0,0,0,.4);
+    background:#171321;
+    transition:.5s;
+}
+
+.photo:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 15px 45px rgba(255,80,170,.25);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.photo:hover img{
+    transform:scale(1.08);
+}
+
+.caption{
+    margin-top:10px;
+    color:#f5bfd9;
+    font-size:13px;
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.letter{
+    margin:45px auto 0;
+    max-width:750px;
+    padding:35px 28px;
+    border-radius:25px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,180,215,.2);
+    backdrop-filter:blur(12px);
+    text-align:left;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.letter p{
+    margin-bottom:18px;
+    line-height:1.9;
+    color:#f3e3eb;
+}
+
+.signature{
+    font-family:'Great Vibes',cursive;
+    font-size:45px;
+    color:#ffafd2;
+    text-align:right;
+    margin-top:30px;
+}
+
+/* =========================
+   JARDÍN
+========================= */
+
+.garden{
+    margin-top:45px;
+    font-size:70px;
+    letter-spacing:10px;
+    animation:gardenAppear 2s ease infinite alternate;
+}
+
+@keyframes gardenAppear{
+    from{transform:translateY(5px);}
+    to{transform:translateY(-5px);}
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+}
+
+.big-heart{
+    font-size:110px;
+    animation:heartbeat 1.4s infinite;
+    filter:drop-shadow(0 0 20px rgba(255,80,160,.5));
+}
+
+.final-message{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(40px,10vw,75px);
+    color:#ffb3d6;
+    margin:20px 0;
+}
+
+.hidden-message{
+    display:none;
+    margin:30px auto;
+    max-width:600px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,180,215,.25);
+    line-height:1.9;
+    color:#f7e6ee;
+    animation:appear 1s ease;
+}
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#927c88;
+    font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .section-title{
+        font-size:55px;
+    }
+
+    .letter{
+        padding:25px 20px;
+    }
+}
+
+@media(max-width:430px){
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    h1{
+        font-size:72px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+}
+
+/* partículas */
+
+.particle{
+    position:fixed;
+    pointer-events:none;
+    font-size:18px;
+    animation:particleUp 1.5s forwards;
+    z-index:20;
+}
+
+@keyframes particleUp{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-100px) scale(.4);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+
+<!-- FLORES -->
+<div class="flower f1">🌹</div>
+<div class="flower f2">🌼</div>
+<div class="flower f3">🌹</div>
+<div class="flower f4">🌸</div>
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Para una mujer extraordinaria
+        </div>
+
+        <h1>Mi Maestra Miel</h1>
+
+        <div class="heart">💗</div>
+
+        <p class="subtitle">
+            Porque enseñar es dejar una parte del corazón
+            en cada persona que pasa por nuestras manos...
+            y tú tienes un corazón enorme.
+        </p>
+
+        <div class="bee">🐝</div>
+
+        <br>
+
+        <a href="#historia" class="btn">
+            Tengo algo que decirte ✨
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HISTORIA
+========================= -->
+
+<section id="historia">
+
+<div class="container">
+
+    <div class="section-title">
+        Nuestra historia
+    </div>
+
+    <p class="section-text">
+        Hay recuerdos que uno guarda en fotografías...
+        y hay otros que se quedan para siempre en el corazón.
+        Estos son algunos de los momentos que hacen especial
+        nuestra historia.
+    </p>
+
+
+    <!-- =========================
+         FOTOS
+         CAMBIA LOS NOMBRES
+    ========================= -->
+
+    <div class="gallery">
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto1.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">Un momento que guardo conmigo 💗</div>
+        </div>
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto2.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">Tú, siempre tú 🌹</div>
+        </div>
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto3.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">Uno de mis días favoritos ✨</div>
+        </div>
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto4.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">Mi lugar favorito 💗</div>
+        </div>
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto5.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">La mujer que admiro 🌼</div>
+        </div>
+
+        <div>
+            <div class="photo">
+                <img src="fotos/foto6.jpg" alt="Nuestro recuerdo">
+            </div>
+            <div class="caption">Y los que todavía nos faltan... ❤️</div>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CARTA
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+        Para ti, maestra
+    </div>
+
+    <div class="letter">
+
+        <p>
+            Mi vida:
+        </p>
+
+        <p>
+            Hoy no quiero felicitar solamente a una maestra.
+            Quiero felicitar a la mujer que decidió ponerse
+            frente a un salón y entregar todos los días un
+            poquito de su tiempo, de su paciencia y de su corazón.
+        </p>
+
+        <p>
+            Sé que no siempre es fácil. Sé que detrás de cada
+            planeación, cada actividad, cada cuaderno y cada
+            alumno hay cansancio, preocupaciones y días en los
+            que seguramente quisieras simplemente descansar.
+        </p>
+
+        <p>
+            Pero también sé algo: tienes algo que no se puede
+            enseñar en ningún libro. Tienes esa manera tuya de
+            preocuparte, de querer que las cosas salgan bien y
+            de intentar dejar algo bueno en cada niño.
+        </p>
+
+        <p>
+            Y yo tengo la fortuna de poder verte hacerlo.
+        </p>
+
+        <p>
+            Me siento orgulloso de ti, mi Maestra Miel.
+            Orgulloso de la mujer que eres, de la maestra en la
+            que te estás convirtiendo y de todo lo que todavía
+            vas a conseguir.
+        </p>
+
+        <p>
+            Si algún día dudas de ti, recuerda que hay alguien
+            que te mira y piensa:
+            <strong>“Esa mujer puede con todo.”</strong>
+        </p>
+
+        <p>
+            Y si algún día el salón se vuelve un caos, los
+            alumnos no cooperan y la paciencia se te acaba...
+            aquí estará tu abejorro para recordarte que no tienes
+            que cargar todo sola. 🐝💗
+        </p>
+
+        <div class="signature">
+            Con todo mi amor,<br>
+            tu abejorro ❤️
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FLORES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+        Para la maestra que amo
+    </div>
+
+    <p class="section-text">
+        Te regalaría todas las flores del mundo,
+        pero ninguna tendría suficientes pétalos
+        para decirte cuánto te admiro.
+    </p>
+
+    <div class="garden">
+        🌹 🌹 🌼 🌸 🌼 🌹 🌸 🌼 🌹
+    </div>
+
+    <p class="section-text" style="margin-top:35px;">
+        Que cada rosa te recuerde lo hermosa que eres,
+        cada gerbera la alegría que llevas contigo
+        y cada estrella lo orgulloso que estoy de ti.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+<div class="container">
+
+    <div class="big-heart">❤️</div>
+
+    <div class="final-message">
+        Feliz Día del Docente
+    </div>
+
+    <p class="section-text">
+        Para mi maestra favorita...
+        pero sobre todo, para el amor de mi vida.
+    </p>
+
+    <button class="btn" onclick="mostrarSorpresa()">
+        Hay algo más... 💌
+    </button>
+
+    <div id="sorpresa" class="hidden-message">
+
+        <p>
+            Carito...
+        </p>
+
+        <p>
+            Puedes tener 42 alumnos, mil pendientes,
+            planeaciones, listas, reuniones y días pesados...
+            pero nunca olvides que hay un hombre que está
+            completamente orgulloso de llamarte
+            <strong>su mujer.</strong>
+        </p>
+
+        <p>
+            Sigue enseñando, sigue creciendo y sigue siendo
+            esa mujer de corazón de pollito que yo conozco.
+        </p>
+
+        <p>
+            Yo voy a estar aquí, viendo cada uno de tus logros
+            y celebrándolos como si fueran míos.
+        </p>
+
+        <p style="font-size:20px;">
+            Te amo, Maestra Miel. 🍯🐝❤️
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<footer>
+    Hecho con amor por tu abejorro 🐝💗
+</footer>
+
+
+<script>
+
+/* =========================
+   SORPRESA
+========================= */
+
+function mostrarSorpresa(){
+
+    const sorpresa = document.getElementById("sorpresa");
+
+    if(sorpresa.style.display === "block"){
+        sorpresa.style.display = "none";
+    }else{
+        sorpresa.style.display = "block";
+
+        sorpresa.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+    }
+}
+
+
+/* =========================
+   PARTÍCULAS AL TOCAR
+========================= */
+
+document.addEventListener("click", function(e){
+
+    const emojis = ["💗","🌸","✨","🌹","🌼","💕"];
+
+    for(let i=0;i<5;i++){
+
+        const particle = document.createElement("div");
+
+        particle.className = "particle";
+
+        particle.innerText =
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        particle.style.left =
+            (e.clientX + (Math.random()*40-20)) + "px";
+
+        particle.style.top =
+            (e.clientY + (Math.random()*40-20)) + "px";
+
+        document.body.appendChild(particle);
+
+        setTimeout(()=>{
+            particle.remove();
+        },1500);
+    }
+
+});
+
+</script>
+
+</body>
+</html>
